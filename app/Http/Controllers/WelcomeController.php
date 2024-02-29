@@ -6,13 +6,33 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-    public function hello(){
-        return('Hello World');
-        }
-        public function greeting(){
-            return view('blog.hello')
-            ->with('name','Andi')
-            ->with('occupation','Astronaut');
-            }
-           
+    public function greeting(){
+        return view('home');
+    }
+    
+    public function beverage(){
+        return view('category.food-beverage');
+    }    
+
+    public function beauty(){
+        return view('category.beauty-health');
+    }
+
+    public function homecare(){
+        return view('category.home-care');
+    }
+    
+    public function baby(){
+        return view('category.baby-kid');
+    }
+
+    public function sales(){
+        return view('sales');
+    }
+    
+    public function showProfile($id, $name)
+    {
+        return view('user.profile', ['id' => $id, 'name' => $name]);
+    }
+
 }
